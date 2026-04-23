@@ -9,14 +9,14 @@
 .form {
   background: rgba(255, 255, 255, 0.03);
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 20px;
   border: 1px solid rgba(0, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 25px;
 }
 
 input[type="file"] {
@@ -26,9 +26,9 @@ input[type="file"] {
 .choose {
   background-color: transparent;
   border: 1px solid rgba(20, 240, 255, 0.5);
-  border-radius: 6px;
+  border-radius: 12px;
   color: #14f0ff;
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-family: 'Rajdhani', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
@@ -52,7 +52,7 @@ input[type="file"] {
   max-width: 150px;
   max-height: 150px;
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: 8px;
   vertical-align: middle;
   box-shadow: 0 0 10px rgba(20, 240, 255, 0.3);
 }
@@ -61,7 +61,7 @@ input[type="file"] {
   color: #fff;
   font-family: 'Rajdhani', sans-serif;
   font-size: 1.1rem;
-  max-width: 200px;
+  max-width: 300px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -71,8 +71,8 @@ input[type="file"] {
   background-color: transparent;
   border: 1px solid rgba(138, 43, 226, 0.5);
   color: #8a2be2;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 12px 25px;
+  border-radius: 12px;
   font-family: 'Orbitron', sans-serif;
   font-size: 1rem;
   font-weight: 700;
@@ -98,21 +98,3 @@ input[type="file"] {
   cursor: not-allowed;
 }
 
-.tag-input {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-  color: #fff;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1rem;
-  padding: 10px 15px;
-  min-width: 200px;
-  transition: all 0.3s ease;
-}
-
-.tag-input:focus {
-  outline: none;
-  border-color: #14f0ff;
-  box-shadow: 0 0 10px rgba(20, 240, 255, 0.2);
-  background: rgba(0, 0, 0, 0.6);
-}

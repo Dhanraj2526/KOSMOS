@@ -7,6 +7,7 @@ const Login = ({ onLogin, account }) => {
   return (
     <div className="login-container">
       <div className="login-card">
+        <span className="login-icon-large">🛡️</span>
         <h2 className="login-title">SECURE LOGIN</h2>
         <p className="login-subtitle">
           Account: <span className="account-text">{account.slice(0,6)}...{account.slice(-4)}</span>
@@ -22,7 +23,7 @@ const Login = ({ onLogin, account }) => {
           }}
           disabled={isVerifying}
         >
-          {isVerifying ? "Verifying..." : "Sign to Login"}
+          {isVerifying ? "AUTHENTICATING..." : "INITIALIZE SECURE ACCESS"}
         </button>
       </div>
     </div>

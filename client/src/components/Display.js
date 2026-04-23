@@ -98,6 +98,12 @@ const Display = ({ contract, account, showSearchOnly }) => {
 
   return (
     <div className="display-wrapper">
+      {showSearchOnly && (
+        <div className="shared-header-container">
+          <h2 className="shared-title-center">SHARED WITH ME</h2>
+        </div>
+      )}
+
       <div className="shared-access-header">
         {showSearchOnly && (
           <input
@@ -127,8 +133,9 @@ const Display = ({ contract, account, showSearchOnly }) => {
           <p>Syncing Ledger Assets...</p>
         </div>
       ) : (
-        <div className="image-list">
-          {filteredFiles.map((item, i) => (
+        filteredFiles.length > 0 && (
+          <div className="image-list">
+            {filteredFiles.map((item, i) => (
             <div className="image-card" key={i} onClick={() => setModalData(item)}>
               <div className="image-container">
                 {renderThumbnail(item)}
@@ -148,6 +155,7 @@ const Display = ({ contract, account, showSearchOnly }) => {
             </div>
           ))}
         </div>
+        )
       )}
 
       {modalData && (

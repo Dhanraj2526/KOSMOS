@@ -1,12 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
 import "./FileUpload.css";
+
 const FileUpload = ({ contract, account, provider, onUploadSuccess }) => {
   const [file, setFile] = useState(null);
   const [fileName, setFileName] = useState("No file selected");
   const [previewUrl, setPreviewUrl] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [integrityNote, setIntegrityNote] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,7 +33,6 @@ const FileUpload = ({ contract, account, provider, onUploadSuccess }) => {
           name: file.name,
           type: file.type,
           image: ImgHash,
-          integrityNote: integrityNote,
           uploadedAt: new Date().toISOString()
         };
 
@@ -57,14 +56,13 @@ const FileUpload = ({ contract, account, provider, onUploadSuccess }) => {
         try {
           const transaction = await contract.add(account, MetadataHash);
           await transaction.wait();
-          alert("Successfully File Secured with Integrity Note");
+          alert("Successfully File Secured!");
           
           if (onUploadSuccess) onUploadSuccess();
 
           setFileName("No file selected");
           setFile(null);
           setPreviewUrl(null);
-          setIntegrityNote("");
         } catch (contractError) {
           console.error("Smart contract error:", contractError);
           alert("Pinata upload succeeded, but smart contract transaction failed.");
@@ -77,6 +75,7 @@ const FileUpload = ({ contract, account, provider, onUploadSuccess }) => {
       }
     }
   };
+
   const retrieveFile = (e) => {
     const data = e.target.files[0];
     const reader = new window.FileReader();
@@ -90,6 +89,7 @@ const FileUpload = ({ contract, account, provider, onUploadSuccess }) => {
     setFileName(data.name);
     e.preventDefault();
   };
+
   return (
     <div className="top">
       <form className="form" onSubmit={handleSubmit}>
@@ -107,15 +107,9 @@ const FileUpload = ({ contract, account, provider, onUploadSuccess }) => {
           name="data"
           onChange={retrieveFile}
         />
-        <input
-          type="text"
-          className="tag-input"
-          placeholder="Add an integrity note (e.g. Secret, Legal)..."
-          value={integrityNote}
-          onChange={(e) => setIntegrityNote(e.target.value)}
-          disabled={!file || isProcessing}
-        />
+        
         <span className="textArea">Asset: {fileName}</span>
+        
         <button type="submit" className="upload" disabled={!file || isProcessing}>
           {isProcessing ? "SECURING..." : "SECURE ASSET"}
         </button>
@@ -123,4 +117,5 @@ const FileUpload = ({ contract, account, provider, onUploadSuccess }) => {
     </div>
   );
 };
+
 export default FileUpload;

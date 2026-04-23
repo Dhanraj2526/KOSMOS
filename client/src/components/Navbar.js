@@ -12,7 +12,7 @@ const Navbar = ({ account, username, onLogout, activeTab, setActiveTab }) => {
             className={`nav-link ${activeTab === "home" ? "active" : ""}`}
             onClick={() => setActiveTab("home")}
           >
-            DASHBOARD
+            HOME
           </button>
           <button 
             className={`nav-link ${activeTab === "drive" ? "active" : ""}`}
@@ -37,7 +37,7 @@ const Navbar = ({ account, username, onLogout, activeTab, setActiveTab }) => {
         <div className="navbar-info">
           <div className="user-profile">
             <span className="user-name">ACCESS GRANTED: {username || "UNREGISTERED"}</span>
-            <button className="logout-btn" onClick={onLogout}>LOGOUT</button>
+            <button className="logout-btn-premium" onClick={onLogout}>LOGOUT</button>
           </div>
         </div>
       </div>

@@ -5,6 +5,18 @@ document.getElementById("openSite").addEventListener("click", () => {
   chrome.tabs.create({ url: "http://localhost:3000" });
 });
 
+document.getElementById("sidebarBtn").addEventListener("click", () => {
+  chrome.runtime.sendMessage({ action: "OPEN_SIDEBAR" }, (response) => {
+    if (chrome.runtime.lastError) {
+      console.error(chrome.runtime.lastError);
+      return;
+    }
+    if (response && response.status === "success") {
+      window.close();
+    }
+  });
+});
+
 const uploadZone = document.getElementById("uploadZone");
 
 // Handle Paste (Ctrl + V)

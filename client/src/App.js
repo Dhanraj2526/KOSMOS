@@ -180,6 +180,7 @@ function App() {
       <div className="App">
         <div className="glow-orb orb-1"></div>
         <div className="glow-orb orb-2"></div>
+        <div className="glow-orb orb-3"></div>
 
         <div className="tab-content">
           {activeTab === "home" && (
@@ -210,7 +211,6 @@ function App() {
 
           {activeTab === "shared" && (
             <div className="shared-section">
-              <h2 className="section-title">SHARED WITH ME</h2>
               <Display contract={contract} account={account} showSearchOnly={true}></Display>
             </div>
           )}
