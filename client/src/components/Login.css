@@ -1,0 +1,69 @@
+.login-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #0a0a1a 0%, #000 100%);
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  padding: 50px;
+  border-radius: 20px;
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  text-align: center;
+  width: 400px;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.login-title {
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+.login-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.account-text {
+  color: #8a2be2;
+  font-weight: bold;
+}
+
+.login-desc {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.login-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #8a2be2;
+  color: #8a2be2;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #8a2be2;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
